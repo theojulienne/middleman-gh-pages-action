@@ -15,7 +15,7 @@ echo 'Publishing site...'
 cd ${INPUT_BUILD_LOCATION}
 
 git fetch origin ${INPUT_REMOTE_BRANCH}
-cname=$(git show ${INPUT_REMOTE_BRANCH}:CNAME || true)
+cname=$(git show origin/${INPUT_REMOTE_BRANCH}:CNAME || true)
 if [ ! -z "$cname" ]; then
   echo "$name" > CNAME
 fi
