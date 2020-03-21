@@ -12,6 +12,7 @@ LABEL "com.github.actions.color"="orange"
 
 LABEL "repository"="http://github.com/yurikoval/middleman-gh-pages-action"
 
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get update; \
   apt-get install -y --no-install-recommends nodejs
 
