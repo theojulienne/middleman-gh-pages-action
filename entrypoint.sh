@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 echo 'Installing bundles...'
 cd ${INPUT_SITE_LOCATION}
