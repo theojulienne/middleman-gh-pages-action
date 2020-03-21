@@ -17,7 +17,7 @@ cd ${INPUT_BUILD_LOCATION}
 git fetch origin ${INPUT_REMOTE_BRANCH}
 cname=$(git show origin/${INPUT_REMOTE_BRANCH}:CNAME || true)
 if [ ! -z "$cname" ]; then
-  echo "$name" > CNAME
+  echo "$cname" > CNAME
 fi
 
 remote_repo="https://${INPUT_GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${INPUT_GITHUB_REPOSITORY}.git" && \
