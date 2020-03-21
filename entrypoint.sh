@@ -14,7 +14,7 @@ bundle exec middleman build
 echo 'Publishing site...'
 cd ${INPUT_BUILD_LOCATION}
 
-cname=$(git show origin/${INPUT_REMOTE_BRANCH}:CNAME)
+cname=$(git show origin/${INPUT_REMOTE_BRANCH}:CNAME || true)
 if [ ! -z "$cname" ]; then
   echo "$name" > CNAME
 fi
