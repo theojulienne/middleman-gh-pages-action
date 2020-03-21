@@ -13,6 +13,12 @@ bundle exec middleman build
 
 echo 'Publishing site...'
 cd ${INPUT_BUILD_LOCATION}
+
+cname=$(git show origin/${INPUT_REMOTE_BRANCH}:CNAME)
+if [ ! -z "$cname" ]; then
+  echo "$name" > CNAME
+fi
+
 remote_repo="https://${INPUT_GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${INPUT_GITHUB_REPOSITORY}.git" && \
 remote_branch=${INPUT_REMOTE_BRANCH}
 git init
